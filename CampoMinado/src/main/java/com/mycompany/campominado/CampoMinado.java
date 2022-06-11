@@ -5,17 +5,17 @@
 
 package com.mycompany.campominado;
 
+import java.util.Random;
+
 /**
  *
  * @author andre
  */
 public class CampoMinado {
 
-    public static void main(String[] args) {
-        Grade e1 = new Grade();
-        Grade e2 = new Grade();
-        e1.adicionarVizinhos(e2);
-        e2.minar();
-        System.out.println(e1.clicar());
+    public static void main(String[] args) {         
+    Campo c = new Campo();
+    c.adicionarMinas();
+    System.out.println(c);
     }
 }

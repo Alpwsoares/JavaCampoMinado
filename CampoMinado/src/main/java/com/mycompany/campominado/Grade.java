@@ -64,4 +64,12 @@ public class Grade {
         this.marcado = false;
         this.clicado = false;
     }
+
+    @Override
+    public String toString() {
+        if(minado)
+            return "-1";
+        return "+" + this.numMinasNosVizinhos();
+    }
+    
 }

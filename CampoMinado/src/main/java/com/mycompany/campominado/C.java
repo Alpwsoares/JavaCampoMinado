@@ -9,6 +9,7 @@ package com.mycompany.campominado;
  * @author andre
  */
 public abstract class C {
-    static int NUM_LINHAS = 9;
-    static int NUM_COLUNAS =9;
+    static int NUM_LINHAS = 6;
+    static int NUM_COLUNAS =6;
+    static int NUM_MINAS =5;
 }
