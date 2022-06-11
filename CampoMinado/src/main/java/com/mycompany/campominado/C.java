@@ -12,4 +12,5 @@ public abstract class C {
     static int NUM_LINHAS = 6;
     static int NUM_COLUNAS =6;
     static int NUM_MINAS =5;
+    static int TAM_GRADE = 30;
 }

@@ -53,6 +53,10 @@ public class Campo {
          }
     }
 
+    public int clicar(int linha, int coluna){
+        return matriz[linha][coluna].clicar();
+    }
+    
     @Override
     public String toString() {
         String str = "";

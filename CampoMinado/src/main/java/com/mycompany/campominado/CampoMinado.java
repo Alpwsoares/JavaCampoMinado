@@ -5,8 +5,6 @@
 
 package com.mycompany.campominado;
 
-import java.util.Random;
-
 /**
  *
  * @author andre
@@ -14,8 +12,10 @@ import java.util.Random;
 public class CampoMinado {
 
     public static void main(String[] args) {         
+    
+    //c.adicionarMinas();
+    //System.out.println(c);
     Campo c = new Campo();
-    c.adicionarMinas();
-    System.out.println(c);
+    JFrameCampo f = new JFrameCampo(c);
     }
 }
