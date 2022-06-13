@@ -18,7 +18,7 @@ public class JButtonGrade extends JButton{
     String text;
     
     public JButtonGrade(Campo c){
-      text = "";
+     this.text = "";
       this.setText(text);
       this.c = c;
       this.addActionListener((java.awt.event.ActionEvent evt) -> { 

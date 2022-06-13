@@ -17,6 +17,7 @@ public class JFrameCampo extends JFrame{
     Campo c;
     
     public JFrameCampo(Campo c){
+        confIniciais();
         this.c = c;
         this.panel = new JPanel();
         panel.setLayout(null);
@@ -28,17 +29,19 @@ public class JFrameCampo extends JFrame{
                 matBut[i][j] = new JButtonGrade(this.c);
                 matBut[i][j].linha = i;
                 matBut[i][j].coluna = j;
-                matBut[i][j].setSize(30,30);
-                matBut[i][j].setLocation(30*j, 30*i);
+                matBut[i][j].setPos(i, j);
+                matBut[i][j].setSize(C.TAM_GRADE, C.TAM_GRADE);
+                matBut[i][j].setFocusable(false);
+                matBut[i][j].setLocation(C.TAM_GRADE * j, C.TAM_GRADE * i + C.CONF_SUP);
                 matBut[i][j].setText(Integer.toString(n++));
                 panel.add(matBut[i][j]);
             } 
         }
-        confIniciais();
+        
     }
     private void confIniciais(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(C.NUM_COLUNAS*C.TAM_GRADE+15,C.NUM_LINHAS*C.TAM_GRADE+300);
+        this.setSize(C.NUM_COLUNAS*C.TAM_GRADE,C.NUM_LINHAS*C.TAM_GRADE + C.CONF_SUP + C.ALTURA_SUP);
         this.setResizable(false);
         this.setVisible(true);
     }

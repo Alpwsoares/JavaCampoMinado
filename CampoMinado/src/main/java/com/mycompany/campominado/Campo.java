@@ -41,16 +41,15 @@ public class Campo {
 
     public void adicionarMinas(){
          int n = C.NUM_MINAS;
-         
+         Random rand = new Random();
          while (n>0){
-             Random rand = new Random();
              int l =rand.nextInt(C.NUM_LINHAS);
              int c = rand.nextInt(C.NUM_COLUNAS);
-             
              if(matriz[l][c].minar()){ 
                  n--;
              }
          }
+         System.out.println(this);
     }
 
     public int clicar(int linha, int coluna){
