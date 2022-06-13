@@ -4,7 +4,6 @@
  */
 package com.mycompany.campominado;
 
-import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 /**
@@ -17,8 +16,9 @@ public class JButtonGrade extends JButton{
     Campo c;
     String text;
     
-    public JButtonGrade(Campo c){
-     this.text = "";
+    public JButtonGrade(Campo c, JFrameCampo cpg){
+      //this.campoGrafico =cpg;
+      this.text = "";
       this.setText(text);
       this.c = c;
       this.addActionListener((java.awt.event.ActionEvent evt) -> { 
