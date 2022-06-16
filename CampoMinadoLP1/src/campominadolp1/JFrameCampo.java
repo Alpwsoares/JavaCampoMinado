@@ -21,9 +21,6 @@ public class JFrameCampo extends JFrame {
         confIniciais();
     }
 
-    JFrameCampo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     public void hardReset() {
         CampoMinadoLP1.hardReset();
