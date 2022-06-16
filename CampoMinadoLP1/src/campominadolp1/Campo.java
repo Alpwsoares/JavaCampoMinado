@@ -25,30 +25,20 @@ public class Campo {
                 //quando é i-1 para garantir que não acesse posição -1
                 if (i > 0) {
                     //quando é j-1 para garantir que não acesse posição -1
-                    if (j > 0) {
-                        matriz[i][j].adicionarVizinhos(matriz[i - 1][j - 1]);
-                    }
+                    if (j > 0) matriz[i][j].adicionarVizinhos(matriz[i - 1][j - 1]);
+                
                     matriz[i][j].adicionarVizinhos(matriz[i - 1][j]);
                     //se j for 2, ele não pode acessar j+1
-                    if (j < C.NUM_COLUNAS - 1) {
-                        matriz[i][j].adicionarVizinhos(matriz[i - 1][j + 1]);
-                    }
+                    if (j < C.NUM_COLUNAS - 1) matriz[i][j].adicionarVizinhos(matriz[i - 1][j + 1]);
                 }
-                if (j > 0) {
-                    matriz[i][j].adicionarVizinhos(matriz[i][j - 1]);
-                }
-                if (j < C.NUM_COLUNAS - 1) {
-                    matriz[i][j].adicionarVizinhos(matriz[i][j + 1]);
-                }
+                
+                if (j > 0) matriz[i][j].adicionarVizinhos(matriz[i][j - 1]);
+                if (j < C.NUM_COLUNAS - 1)  matriz[i][j].adicionarVizinhos(matriz[i][j + 1]);
 
                 if (i < C.NUM_LINHAS - 1) {
-                    if (j > 0) {
-                        matriz[i][j].adicionarVizinhos(matriz[i + 1][j - 1]);
-                    }
+                    if (j > 0)  matriz[i][j].adicionarVizinhos(matriz[i + 1][j - 1]);
                     matriz[i][j].adicionarVizinhos(matriz[i + 1][j]);
-                    if (j < C.NUM_COLUNAS - 1) {
-                        matriz[i][j].adicionarVizinhos(matriz[i + 1][j + 1]);
-                    }
+                    if (j < C.NUM_COLUNAS - 1) matriz[i][j].adicionarVizinhos(matriz[i + 1][j + 1]);
                 }
             }
         }
@@ -71,7 +61,28 @@ public class Campo {
     public int clicar(int linha, int coluna) {
         return matriz[linha][coluna].clicar();
     }
-
+    
+        public boolean Vencido(){        
+        for (int i = 0; i < C.NUM_LINHAS; i++) {
+            for (int j = 0; j < C.NUM_COLUNAS; j++) {
+                if (!matriz[i][j].Finalizado()) return false;
+            }            
+        }
+        return true;
+    }
+        public boolean Perdido(){        
+        for (int i = 0; i < C.NUM_LINHAS; i++) {
+            for (int j = 0; j < C.NUM_COLUNAS; j++) {
+                if (matriz[i][j].clicada && matriz[i][j].minada) return true;
+            }            
+        }
+        return false;
+    }
+        
+     public Grade getGrade(int linha, int coluna){
+        return matriz[linha][coluna];
+    }
+     
     @Override
     public String toString() {
         String str = "";

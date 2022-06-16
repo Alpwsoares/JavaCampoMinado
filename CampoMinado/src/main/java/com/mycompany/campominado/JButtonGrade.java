@@ -25,6 +25,10 @@ public class JButtonGrade extends JButton{
              Pressionado(evt);
       });
     }  
+
+    JButtonGrade(Campo c) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     private void Pressionado(java.awt.event.ActionEvent evt){
             int ret = c.clicar(linha, coluna);
             this.text = Integer.toString(ret);

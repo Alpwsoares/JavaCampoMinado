@@ -7,7 +7,7 @@ public class Grade {
     boolean minada;
     boolean revelado;
     boolean marcado;
-    boolean clicado;
+    boolean clicada;
 
     ArrayList<Grade> vizinhos;
     JButtonGrade button;
@@ -16,7 +16,7 @@ public class Grade {
         this.minada = false;
         this.revelado = false;
         this.marcado = false;
-        this.clicado = false;
+        this.clicada = false;
 
         this.vizinhos = new ArrayList();
     }
@@ -43,7 +43,7 @@ public class Grade {
     //0 não possui minas nos vizinhos
     //n possui n minas nos vizinhos
     public int clicar() {
-        this.clicado = true;
+        this.clicada = true;
         if (this.minada) {
             return -1;
         } else {
@@ -65,14 +65,21 @@ public class Grade {
         this.minada = false;
         this.revelado = false;
         this.marcado = false;
-        this.clicado = false;
+        this.clicada = false;
     }
-
+      public boolean Finalizado(){
+        if(this.minada && this.marcado) return true;
+        if(!this.minada && !this.marcado && this.clicada) return true;
+        return false;
+    }
+    
+    public void setButton(JButtonGrade button){
+        this.button = button;
+    }
     @Override
     public String toString() {
-        if (this.minada) {
+        if (this.minada)
             return "-1";
-        }
         return "+" + this.numMinasNosVizinhos();
     }
 
