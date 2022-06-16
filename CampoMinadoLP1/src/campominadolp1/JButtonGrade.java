@@ -91,7 +91,7 @@ public final class JButtonGrade extends JButton {
         boolean estaMarcado = this.gradeLg.marcar();
         if (this.gradeLg.marcado) {
             try {
-                Image img = ImageIO.read(getClass().getResource("marcado.png"));
+                Image img = ImageIO.read(getClass().getResource("pato.png"));
                 img = img.getScaledInstance(C.TAM_GRADE, C.TAM_GRADE, java.awt.Image.SCALE_SMOOTH);
                 this.setIcon(new ImageIcon(img));
             } catch (Exception ex) {
@@ -114,7 +114,7 @@ public final class JButtonGrade extends JButton {
 
         if (cod.equals("-1")) {
             try {
-                Image img = ImageIO.read(getClass().getResource("mine.png"));
+                Image img = ImageIO.read(getClass().getResource("nando.png"));
                 img = img.getScaledInstance(C.TAM_GRADE, C.TAM_GRADE, java.awt.Image.SCALE_SMOOTH);
                 this.setIcon(new ImageIcon(img));
             } catch (Exception ex) {

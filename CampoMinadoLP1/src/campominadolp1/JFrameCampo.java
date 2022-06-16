@@ -64,6 +64,7 @@ public class JFrameCampo extends JFrame {
             this.reset();
         });
         this.resetBut.setSize(C.TAM_GRADE, C.TAM_GRADE);
+        this.resetBut.setBackground(Color.black);
         this.resetBut.setLocation((C.TAM_GRADE * C.NUM_COLUNAS) / 2 - C.TAM_GRADE / 2, C.CONF_SUP - C.TAM_GRADE);
         this.panel.add(this.resetBut);
         //5x5 espacos de tamanho 10x10
@@ -138,8 +139,8 @@ public class JFrameCampo extends JFrame {
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 if (matBut[i][j].gradeLg.minada) {
-                    matBut[i][j].setLayout( null );
-                    matBut[i][j].setBackground(Color.white);
+                    //matBut[i][j].setLayout( null );
+                    //matBut[i][j].setBackground(Color.white);
                     matBut[i][j].revela("-1");
                 }
                 else{
