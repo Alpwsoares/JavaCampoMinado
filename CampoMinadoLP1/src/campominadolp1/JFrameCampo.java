@@ -34,17 +34,17 @@ public class JFrameCampo extends JFrame {
         panel.setLayout(null);
         this.add(panel);
         matBut = new JButtonGrade[C.NUM_LINHAS][C.NUM_COLUNAS];
-        //int n = 0;
+
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 //matriz de botoes do jogo
                 matBut[i][j] = new JButtonGrade(this.c, this);
                 c.getGrade(i, j).setButton(matBut[i][j]);
+                //posicao do botao onde estou clicando
                 matBut[i][j].setPos(i, j);
                 matBut[i][j].setSize(C.TAM_GRADE, C.TAM_GRADE);
                 matBut[i][j].setFocusable(false);
                 matBut[i][j].setLocation(C.TAM_GRADE * j, C.TAM_GRADE * i + C.CONF_SUP);
-                //matBut[i][j].setText(Integer.toString(n++));
                 panel.add(matBut[i][j]);
             }
         }
@@ -150,11 +150,13 @@ public class JFrameCampo extends JFrame {
         System.out.println("Verificando se Ganhou ou Perdeu");
         if (this.c.Vencido()) {
             System.out.println("Venceu");
+            JOptionPane.showMessageDialog(null,"Ganhou"); 
             this.desativaBotoes();
         }
 
         if (this.c.Perdido()) {
             System.out.println("Perdeu");
+            JOptionPane.showMessageDialog(null,"Perdeu"); 
             this.desativaBotoes();
         }
 

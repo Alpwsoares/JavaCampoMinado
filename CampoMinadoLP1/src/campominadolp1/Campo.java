@@ -2,16 +2,17 @@ package campominadolp1;
 
 import java.util.Random;
 
+//representa o campo como todo (conjunto de botoes)
 public class Campo {
 
     Grade[][] matriz;
 
     public Campo() {
-        //instanciei a matriz
+        //instancia matriz
         matriz = new Grade[C.NUM_LINHAS][C.NUM_COLUNAS];
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
-                //povoei a matriz
+                //povoa a matriz
                 matriz[i][j] = new Grade();
             }
         }
@@ -62,7 +63,7 @@ public class Campo {
         return matriz[linha][coluna].clicar();
     }
     
-        public boolean Vencido(){        
+    public boolean Vencido(){        
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 if (!matriz[i][j].Finalizado()) return false;
@@ -70,7 +71,7 @@ public class Campo {
         }
         return true;
     }
-        public boolean Perdido(){        
+    public boolean Perdido(){        
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 if (matriz[i][j].clicada && matriz[i][j].minada) return true;
