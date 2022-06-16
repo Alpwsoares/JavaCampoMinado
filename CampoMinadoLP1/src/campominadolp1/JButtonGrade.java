@@ -22,7 +22,7 @@ public final class JButtonGrade extends JButton {
         this.text = "";
         this.setText(text);
         this.campoLg = c;
-        
+
         this.addActionListener((java.awt.event.ActionEvent evt) -> {
             Pressionado(false);
         });
@@ -33,9 +33,10 @@ public final class JButtonGrade extends JButton {
                 }
             }
         });
-        
+
     }
-     public void reset() {
+
+    public void reset() {
         this.gradeLg.reset();
         this.text = "";
         this.setText(text);
@@ -57,6 +58,7 @@ public final class JButtonGrade extends JButton {
         }
         this.campoGrafico.checkEstado();
     }
+
     public void clicar() {
         System.out.println("linha: " + linha + " coluna: " + coluna);
 
@@ -79,6 +81,7 @@ public final class JButtonGrade extends JButton {
         this.revela(this.text);
 
     }
+
     public void marcar() {
         if (this.gradeLg.clicada) {
             return;
@@ -102,13 +105,14 @@ public final class JButtonGrade extends JButton {
     public void setPos(int linha, int coluna) {
         this.linha = linha;
         this.coluna = coluna;
-         this.gradeLg = campoLg.getGrade(linha, coluna);
+        this.gradeLg = campoLg.getGrade(linha, coluna);
     }
+
     public void revela(String cod) {
 
         if (cod.equals("-1")) {
             try {
-                Image img = ImageIO.read(getClass().getResource("mine.jpg"));
+                Image img = ImageIO.read(getClass().getResource("mine.png"));
                 img = img.getScaledInstance(C.TAM_GRADE, C.TAM_GRADE, java.awt.Image.SCALE_SMOOTH);
                 this.setIcon(new ImageIcon(img));
             } catch (Exception ex) {

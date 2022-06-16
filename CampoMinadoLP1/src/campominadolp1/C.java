@@ -7,5 +7,5 @@ public abstract class C {
     static int NUM_MINAS = 6;
     static int TAM_GRADE = 50;
     static int CONF_SUP = 100;
-    static int ALTURA_SUP = 20;
+    static int ALTURA_SUP = 38;
 }

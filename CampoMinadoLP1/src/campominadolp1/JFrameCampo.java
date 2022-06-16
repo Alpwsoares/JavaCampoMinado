@@ -37,7 +37,7 @@ public class JFrameCampo extends JFrame {
         panel.setLayout(null);
         this.add(panel);
         matBut = new JButtonGrade[C.NUM_LINHAS][C.NUM_COLUNAS];
-        int n = 0;
+        //int n = 0;
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 //matriz de botoes do jogo
@@ -53,7 +53,7 @@ public class JFrameCampo extends JFrame {
         }
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(C.NUM_COLUNAS * C.TAM_GRADE, C.NUM_LINHAS * C.TAM_GRADE + C.CONF_SUP + C.ALTURA_SUP);
+        this.setSize(C.NUM_COLUNAS * C.TAM_GRADE + 16, C.NUM_LINHAS * C.TAM_GRADE + C.CONF_SUP + C.ALTURA_SUP);
         this.setResizable(false);
         this.setVisible(true);
 
