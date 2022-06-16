@@ -1,5 +1,5 @@
 package campominadolp1;
-
+//constantes
 public abstract class C {
 
     static int NUM_LINHAS = 6;
