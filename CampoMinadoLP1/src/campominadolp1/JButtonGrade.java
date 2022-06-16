@@ -22,7 +22,6 @@ public final class JButtonGrade extends JButton {
         this.text = "";
         this.setText(text);
         this.campoLg = c;
-
         this.addActionListener((java.awt.event.ActionEvent evt) -> {
             Pressionado(false);
         });
@@ -67,6 +66,9 @@ public final class JButtonGrade extends JButton {
 
         if (this.gradeLg.minada) {
             this.campoGrafico.revelarMinas();
+        }
+        if (this.gradeLg.revelado) {
+            this.campoGrafico.revelarAbertos();
         }
 
         if (numVizinhosMinados == 0) {
@@ -121,6 +123,8 @@ public final class JButtonGrade extends JButton {
             }
         } else {
             this.setText(cod);
+            //matBut[i][j].setLayout( null );
+            //matBut[i][j].setBackground(Color.black);
         }
 
         this.setEnabled(false);

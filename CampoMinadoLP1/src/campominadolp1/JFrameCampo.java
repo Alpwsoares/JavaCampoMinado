@@ -1,5 +1,6 @@
 package campominadolp1;
 
+import java.awt.Color;
 import javax.swing.JFrame;//tela visual
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
@@ -34,7 +35,7 @@ public class JFrameCampo extends JFrame {
         panel.setLayout(null);
         this.add(panel);
         matBut = new JButtonGrade[C.NUM_LINHAS][C.NUM_COLUNAS];
-
+            
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 //matriz de botoes do jogo
@@ -44,8 +45,11 @@ public class JFrameCampo extends JFrame {
                 matBut[i][j].setPos(i, j);
                 matBut[i][j].setSize(C.TAM_GRADE, C.TAM_GRADE);
                 matBut[i][j].setFocusable(false);
+                matBut[i][j].setLayout( null );
+                matBut[i][j].setBackground(Color.orange);
                 matBut[i][j].setLocation(C.TAM_GRADE * j, C.TAM_GRADE * i + C.CONF_SUP);
                 panel.add(matBut[i][j]);
+                
             }
         }
 
@@ -53,7 +57,7 @@ public class JFrameCampo extends JFrame {
         this.setSize(C.NUM_COLUNAS * C.TAM_GRADE + 16, C.NUM_LINHAS * C.TAM_GRADE + C.CONF_SUP + C.ALTURA_SUP);
         this.setResizable(false);
         this.setVisible(true);
-
+        
         this.resetBut = new JButton();
         this.resetBut.addActionListener((java.awt.event.ActionEvent evt) -> {
 
@@ -123,6 +127,8 @@ public class JFrameCampo extends JFrame {
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 matBut[i][j].reset();
+                matBut[i][j].setBackground(Color.orange);
+    
             }
         }
         this.c.adicionarMinas();
@@ -132,7 +138,23 @@ public class JFrameCampo extends JFrame {
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 if (matBut[i][j].gradeLg.minada) {
+                    matBut[i][j].setLayout( null );
+                    matBut[i][j].setBackground(Color.white);
                     matBut[i][j].revela("-1");
+                }
+                else{
+                    matBut[i][j].setLayout( null );
+                    matBut[i][j].setBackground(Color.gray);
+                }
+            }
+        }
+    }
+    public void revelarAbertos() {
+        for (int i = 0; i < C.NUM_LINHAS; i++) {
+            for (int j = 0; j < C.NUM_COLUNAS; j++) {
+                if (matBut[i][j].gradeLg.revelado) {
+                    matBut[i][j].setLayout( null );
+                    matBut[i][j].setBackground(Color.white);
                 }
             }
         }
@@ -141,7 +163,7 @@ public class JFrameCampo extends JFrame {
     public void desativaBotoes() {
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
-                matBut[i][j].setEnabled(false);
+                matBut[i][j].setLayout( null );
             }
         }
     }

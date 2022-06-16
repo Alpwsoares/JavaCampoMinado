@@ -49,6 +49,7 @@ public class Grade {
         if (this.minada) {
             return -1;
         } else {
+            this.revelado = true;
             return numMinasNosVizinhos();
         }
     }
