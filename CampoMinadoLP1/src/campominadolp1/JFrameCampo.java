@@ -17,20 +17,21 @@ public class JFrameCampo extends JFrame {
     JButton difBut;
     JButton custBut;
 
-    public JFrameCampo(Campo c) {
+    public JFrameCampo() {
         confIniciais();
     }
 
     JFrameCampo() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
     public void hardReset() {
         CampoMinadoLP1.hardReset();
         this.dispose();
     }
 
     private void confIniciais() {
-        this.c =new Campo();
+        this.c = new Campo();
         c.adicionarMinas();
         this.panel = new JPanel();
         panel.setLayout(null);
@@ -41,7 +42,7 @@ public class JFrameCampo extends JFrame {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 //matriz de botoes do jogo
                 matBut[i][j] = new JButtonGrade(this.c, this);
-                c.getGrade(i,j).setButton(matBut[i][j]);
+                c.getGrade(i, j).setButton(matBut[i][j]);
                 matBut[i][j].setPos(i, j);
                 matBut[i][j].setSize(C.TAM_GRADE, C.TAM_GRADE);
                 matBut[i][j].setFocusable(false);
@@ -103,25 +104,25 @@ public class JFrameCampo extends JFrame {
         this.panel.add(this.difBut);
 
         this.custBut = new JButton("C");
-        this.custBut.addActionListener((java.awt.event.ActionEvent evt) -> {            
+        this.custBut.addActionListener((java.awt.event.ActionEvent evt) -> {
             int l = Integer.parseInt(JOptionPane.showInputDialog("Insira #linhas"));
             C.NUM_LINHAS = l;
-            
+
             int c = Integer.parseInt(JOptionPane.showInputDialog("Insira #colunas"));
             C.NUM_COLUNAS = c;
-            
+
             int m = Integer.parseInt(JOptionPane.showInputDialog("Insira #minas"));
             C.NUM_MINAS = m;
-            
+
             this.hardReset();
-            
+
         });
         this.custBut.setSize((C.TAM_GRADE * C.NUM_COLUNAS) / 4, C.TAM_GRADE);
         this.custBut.setLocation((C.TAM_GRADE * C.NUM_COLUNAS) / 4 * 3, 0);
         this.panel.add(this.custBut);
     }
 
-     public void reset() {
+    public void reset() {
         for (int i = 0; i < C.NUM_LINHAS; i++) {
             for (int j = 0; j < C.NUM_COLUNAS; j++) {
                 matBut[i][j].reset();
