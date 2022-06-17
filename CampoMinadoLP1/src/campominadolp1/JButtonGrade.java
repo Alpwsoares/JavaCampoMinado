@@ -77,7 +77,7 @@ public final class JButtonGrade extends JButton {
                     vizinha.button.clicar();
                 }
             }
-            //return;
+            
         }
         this.text = Integer.toString(numVizinhosMinados);
         this.revela(this.text);
