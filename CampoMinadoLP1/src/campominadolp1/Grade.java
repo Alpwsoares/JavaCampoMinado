@@ -1,6 +1,7 @@
 package campominadolp1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 //representa cada espaco da matriz (botao)
 public class Grade {
@@ -35,7 +36,7 @@ public class Grade {
             return false;
         }
     }
-
+    
     public boolean marcar() {
         this.marcado = !this.marcado;
         return this.marcado;
@@ -60,7 +61,7 @@ public class Grade {
         percorre todos os vizinhos
         quando encontra um vizinho minado
         incrementa no n
-        */
+         */
         for (Grade vizinha : this.vizinhos) {
             if (vizinha.minada) {
                 n++;

@@ -75,7 +75,7 @@ public class JFrameCampo extends JFrame {
         this.facilBut.addActionListener((java.awt.event.ActionEvent evt) -> {
             C.NUM_COLUNAS = 6;
             C.NUM_LINHAS = 6;
-            C.NUM_MINAS = 6;
+            C.NUM_MINAS = 5;
             this.hardReset();
         });
         this.facilBut.setSize((C.TAM_GRADE * C.NUM_COLUNAS) / 4, C.TAM_GRADE);
