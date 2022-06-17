@@ -1,7 +1,6 @@
 package campominadolp1;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 //representa cada espaco da matriz (botao)
 public class Grade {
